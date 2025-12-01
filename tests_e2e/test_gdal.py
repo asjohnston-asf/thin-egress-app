@@ -34,6 +34,7 @@ def _config(tmp_path, auth_cookies):
 
 def test_list_zip_contents(urls):
     url = urls.join("SA", "SLC", ZIP_FILE)
+    print(url)
     res = gdal.ReadDir(f"/vsizip/vsicurl/{url}")
 
     assert res == [SAFE_FILE]
@@ -42,6 +43,7 @@ def test_list_zip_contents(urls):
 def test_download_file_contents(urls):
     url = urls.join("SA", "SLC", ZIP_FILE, SAFE_FILE, "annotation", XML_FILE)
     path = f"/vsizip/vsicurl/{url}"
+    print(path)
 
     stats = gdal.VSIStatL(path)
     assert stats is not None
