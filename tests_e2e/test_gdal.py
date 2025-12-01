@@ -30,6 +30,8 @@ def _config(tmp_path, auth_cookies):
     gdal.SetConfigOption("GDAL_HTTP_COOKIEJAR", cookie_file_name)
     gdal.SetConfigOption("GDAL_HTTP_MAX_RETRY", "0")
     gdal.SetConfigOption("GDAL_DISABLE_READDIR_ON_OPEN", "TRUE")
+    gdal.SetConfigOption("CPL_CURL_VERBOSE", "YES")
+    gdal.SetConfigOption("CPL_DEBUG", "ON")
 
 
 def test_list_zip_contents(urls):
