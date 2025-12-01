@@ -6,6 +6,7 @@ from http.cookiejar import MozillaCookieJar
 import pytest
 
 gdal = pytest.importorskip("osgeo.gdal")
+gdal.UseExceptions()
 
 GRANULE = "S1A_IW_SLC__1SVV_20150604T161908_20150604T161939_006226_008216_5A4E"
 ZIP_FILE = f"{GRANULE}.zip"
