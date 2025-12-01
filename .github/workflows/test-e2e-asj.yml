@@ -2,6 +2,15 @@ name: End-to-End Test ASJ
 
 on:
   workflow_dispatch:
+    inputs:
+      stack_name:
+        description: stack name
+        required: true
+        default: teatest-jenk-same
+      url:
+        description: url
+        required: true
+        default: https://5nezmjatk2.execute-api.us-west-2.amazonaws.com/API/
 
 jobs:
   test-end-to-end:
@@ -27,4 +36,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           pip install -r requirements/requirements-test.txt GDAL==3.4.1
-          pytest -s tests_e2e/test_gdal.py --stack-name=teatest-jenk-same
+          pytest -s tests_e2e/test_gdal.py --stack-name=${{ inputs.stack_name}} --url=${{ inputs.url }}
