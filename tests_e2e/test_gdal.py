@@ -32,6 +32,7 @@ def _config(tmp_path, auth_cookies):
     gdal.SetConfigOption("GDAL_DISABLE_READDIR_ON_OPEN", "TRUE")
     gdal.SetConfigOption("CPL_CURL_VERBOSE", "YES")
     gdal.SetConfigOption("CPL_DEBUG", "ON")
+    gdal.SetConfigOption("CPL_VSIL_CURL_USE_S3_REDIRECT", "NO")
 
 
 def test_list_zip_contents(tmp_path, urls):
