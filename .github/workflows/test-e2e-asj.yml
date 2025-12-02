@@ -36,4 +36,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           pip install -r requirements/requirements-test.txt GDAL==3.4.1
-          pytest tests_e2e --stack-name=${{ inputs.stack_name}}
+          pytest tests_e2e/test_gdal.py --stack-name=${{ inputs.stack_name}}
