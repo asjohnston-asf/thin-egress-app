@@ -7,10 +7,6 @@ on:
         description: stack name
         required: true
         default: teatest-jenk-same
-      url:
-        description: url
-        required: true
-        default: https://5nezmjatk2.execute-api.us-west-2.amazonaws.com/API/
 
 jobs:
   test-end-to-end:
